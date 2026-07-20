@@ -35,13 +35,9 @@
             overflow-x: hidden;
         }
 
-        /* ---------- ANIMATED BACKGROUND ---------- */
+        /* Animated Background */
         .bg-animation {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
         }
         .bg-animation::before,
         .bg-animation::after {
@@ -49,9 +45,9 @@
             position: absolute;
             width: 800px; height: 800px;
             border-radius: 50%;
-            opacity: 0.15;
+            opacity: 0.12;
             filter: blur(120px);
-            animation: float 20s infinite ease-in-out;
+            animation: float 25s infinite ease-in-out;
         }
         .bg-animation::before {
             background: #6366f1;
@@ -60,19 +56,15 @@
         .bg-animation::after {
             background: #0ea5e9;
             bottom: -200px; right: -200px;
-            animation-delay: -10s;
+            animation-delay: -12s;
         }
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(60px, -40px) scale(1.1); }
             66% { transform: translate(-30px, 20px) scale(0.9); }
         }
-
-        /* Optional subtle grid overlay */
         .bg-grid {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
                 linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
@@ -80,293 +72,143 @@
             z-index: -1;
         }
 
-        /* ---------- NAVIGATION ---------- */
+        /* Navigation */
         .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 15, 0.7);
+            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(20px); background: rgba(10, 10, 15, 0.7);
             border-bottom: 1px solid var(--border);
-            padding: 0.8rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center;
         }
-        .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: var(--primary-light);
-            letter-spacing: -1px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color var(--transition);
-        }
+        .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--primary-light); letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.95rem; transition: color var(--transition); }
         .nav-links a:hover { color: var(--accent); }
 
-        /* ---------- CONTAINER ---------- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem; }
 
-        /* ---------- HERO ---------- */
+        /* Hero */
         .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 0;
+            min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 4rem 0 2rem;
         }
         .hero-badge {
-            background: rgba(99, 102, 241, 0.15);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: var(--primary-light);
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 0.3rem 1.2rem;
-            border-radius: 30px;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(5px);
+            background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--primary-light); font-weight: 600; font-size: 0.85rem; padding: 0.3rem 1.2rem;
+            border-radius: 30px; letter-spacing: 0.5px; margin-bottom: 1.5rem; backdrop-filter: blur(5px);
         }
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 0.5rem;
+            font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; line-height: 1.1;
+            letter-spacing: -2px; margin-bottom: 0.25rem;
             background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .hero .accent {
             background: linear-gradient(135deg, #818cf8, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .hero-contact {
+            font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem;
+            display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+        }
+        .hero-contact span { display: flex; align-items: center; gap: 0.3rem; }
         .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 1rem auto 2rem;
+            font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 1.5rem auto 2rem;
         }
-        .hero-cta {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .hero-cta { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all var(--transition);
+            display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.95rem;
+            padding: 0.8rem 1.8rem; border-radius: 12px; text-decoration: none; transition: all var(--transition);
             backdrop-filter: blur(10px);
         }
         .btn-primary {
-            background: var(--primary);
-            color: #fff;
-            border: 1px solid var(--primary-light);
+            background: var(--primary); color: #fff; border: 1px solid var(--primary-light);
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
         }
-        .btn-primary:hover {
-            background: #4f46e5;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
-        }
+        .btn-primary:hover { background: #4f46e5; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5); }
         .btn-outline {
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.2); color: #fff; background: rgba(255,255,255,0.03);
         }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
-            background: rgba(34, 211, 238, 0.05);
-        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); background: rgba(34, 211, 238, 0.05); }
 
-        /* ---------- SECTIONS ---------- */
-        section {
-            margin: 5rem 0;
-        }
+        /* Sections */
+        section { margin: 5rem 0; }
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 2.5rem;
-            color: #fff;
+            font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 600;
+            display: flex; align-items: center; gap: 0.7rem; margin-bottom: 2.5rem; color: #fff;
         }
-        .section-title i {
-            color: var(--primary-light);
-            font-size: 1.8rem;
+        .section-title i { color: var(--primary-light); font-size: 1.8rem; }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);
+            margin-bottom: 2rem;
         }
 
-        /* About */
-        .about-text {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-            max-width: 800px;
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
+        .about-text { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; max-width: 800px; }
+
+        /* Experience & Achievements lists */
+        .exp-list, .achieve-list {
+            list-style: none; padding: 0;
         }
+        .exp-list li, .achieve-list li {
+            margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative; color: var(--text-muted);
+        }
+        .exp-list li::before, .achieve-list li::before {
+            content: '▹'; position: absolute; left: 0; color: var(--accent); font-weight: bold;
+        }
+        .exp-role { font-weight: 700; color: #fff; display: block; }
+        .exp-company { color: var(--primary-light); font-size: 0.9rem; margin-bottom: 0.3rem; }
 
         /* Projects Grid */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
         }
         .project-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: all var(--transition);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);
+            transition: all var(--transition); position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
         }
         .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            opacity: 0;
-            transition: opacity var(--transition);
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity var(--transition);
         }
         .project-card:hover::before { opacity: 1; }
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-        .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .project-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        .project-tech {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-        .project-links {
-            display: flex;
-            gap: 1.2rem;
-            align-items: center;
-        }
-        .project-links a {
-            text-decoration: none;
-            font-weight: 600;
-            color: var(--primary-light);
-            transition: color var(--transition);
-        }
+        .project-card:hover { transform: translateY(-10px); border-color: rgba(99, 102, 241, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .project-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .project-tech { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
+        .project-desc { color: var(--text-muted); font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.5rem; }
+        .project-links { display: flex; gap: 1.2rem; align-items: center; }
+        .project-links a { text-decoration: none; font-weight: 600; color: var(--primary-light); transition: color var(--transition); }
         .project-links a:hover { color: #fff; text-decoration: underline; }
-        .internal-tag {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
+        .internal-tag { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
 
         /* Skills */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 0.5rem;
-        }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.5rem; }
         .skill-pill {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            backdrop-filter: blur(10px);
-            transition: all var(--transition);
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-muted);
+            padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 500;
+            backdrop-filter: blur(10px); transition: all var(--transition);
         }
         .skill-pill:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: var(--primary-light);
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.2); border-color: var(--primary-light); color: #fff;
+            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            background: rgba(10,10,15,0.4);
-            margin-top: 4rem;
+            border-top: 1px solid var(--border); padding: 2rem; text-align: center;
+            backdrop-filter: blur(10px); background: rgba(10,10,15,0.4); margin-top: 4rem;
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        .social-links a {
-            color: var(--text-muted);
-            transition: all var(--transition);
-        }
-        .social-links a:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
+        .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; }
+        .social-links a { color: var(--text-muted); transition: all var(--transition); }
+        .social-links a:hover { color: var(--accent); transform: translateY(-3px); }
 
-        /* Responsive */
         @media (max-width: 700px) {
             .navbar { padding: 0.8rem 1rem; }
             .nav-links { gap: 1.2rem; }
@@ -375,16 +217,16 @@
     </style>
 </head>
 <body>
-    <!-- BACKGROUND EFFECTS -->
     <div class="bg-animation"></div>
     <div class="bg-grid"></div>
 
-    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-logo">SM</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="mailto:student08172@gmail.com">Contact</a></li>
         </ul>
@@ -397,6 +239,11 @@
             <h1>
                 Shibopriyo<br><span class="accent">Modak</span>
             </h1>
+            <div class="hero-contact">
+                <span><i class="fas fa-map-marker-alt"></i> Kolkata, India</span>
+                <span><i class="fas fa-phone-alt"></i> 9434644507</span>
+                <span><i class="fas fa-envelope"></i> student08172@gmail.com</span>
+            </div>
             <p class="hero-subtitle">
                 I design and build scalable software & AI-driven automation that eliminates complexity, accelerates workflows, and gives teams a competitive edge.
             </p>
@@ -413,9 +260,24 @@
         <!-- ABOUT -->
         <section id="about">
             <h2 class="section-title"><i class="fas fa-user-astronaut"></i> About Me</h2>
-            <div class="about-text">
-                <p>I'm an IT engineering student at the University of Calcutta with a deep passion for crafting robust software solutions that simplify complex business processes. My work lies at the intersection of <strong>full‑stack development</strong> and <strong>intelligent automation</strong> — I thrive on analyzing requirements, designing scalable architectures, and delivering end‑to‑end products that eliminate repetitive manual tasks and unlock real productivity gains.</p>
-                <p style="margin-top:1rem;">With hands‑on client engagement, I bring fresh ideas to every project and continuously explore emerging technologies to deliver innovative, measurable impact.</p>
+            <div class="card about-text">
+                <p>I'm a results-driven IT Engineering student at the University of Calcutta with a unique blend of full‑stack development expertise and business process automation. I have a proven track record of designing scalable web applications and architecting AI‑driven automation workflows that solve real‑world business problems. I'm highly proficient in English communication and technical documentation, and I thrive in fast‑paced, collaborative environments where I can translate complex business requirements into innovative, measurable solutions.</p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="card">
+                <div class="exp-company">Advfiction Private Limited (Remote)</div>
+                <div class="exp-role">Web Developer & Automation Intern — Apr 2026 – Present</div>
+                <ul class="exp-list">
+                    <li><strong>Business Analysis & Solutioning:</strong> Collaborated directly with founder and client to gather requirements and translate them into automation-first technical specifications.</li>
+                    <li><strong>Full‑Stack Development:</strong> Developed responsive web interfaces using React.js, Tailwind CSS, and REST APIs for production client applications; served as Team Lead coordinating between stakeholders.</li>
+                    <li><strong>Intelligent Automation:</strong> Architected AI-driven lead generation pipelines (n8n, Apify, OpenAI/Claude) with scoring and validation, eliminating 100% of manual data entry.</li>
+                    <li><strong>Client Engagement:</strong> Engaged directly with clients via email, WhatsApp, and meetings; aligned deliverables with business goals, resulting in high retention.</li>
+                    <li><strong>Innovation & R&D:</strong> Introduced emerging tools (n8n, AI APIs) and facilitaed comprehensive travel automation suite integrating chatbots, itinerary generation, and CRM — automating the full customer lifecycle.</li>
+                </ul>
             </div>
         </section>
 
@@ -423,60 +285,70 @@
         <section id="projects">
             <h2 class="section-title"><i class="fas fa-rocket"></i> Featured Projects</h2>
             <div class="projects-grid">
-                <!-- AI Interview Platform -->
                 <div class="project-card">
                     <div class="project-icon">🤖</div>
                     <h3>AI Interview Platform</h3>
                     <div class="project-tech">React • Node.js • OpenRouter • Firebase</div>
-                    <p class="project-desc">Personalized mock interviews with speech-to-text, adaptive difficulty, dashboards, and PDF reports — built for performance and scale.</p>
+                    <p class="project-desc">Personalized mock interviews with speech-to-text, adaptive difficulty, dashboards, and PDF reports.</p>
                     <div class="project-links">
                         <a href="https://three-interviewiq-client-2dr2.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
-
-                <!-- Lead Gen Automation -->
                 <div class="project-card">
                     <div class="project-icon">⚡</div>
                     <h3>Lead Generation Automation</h3>
                     <div class="project-tech">n8n • Apify • OpenAI/Claude • Sheets</div>
-                    <p class="project-desc">AI-driven pipeline that scrapes, validates, and scores leads (Hot/Warm/Cold), sending personalized outreach — zero manual data entry.</p>
-                    <div class="project-links">
-                        <span class="internal-tag">Internship – internal tool</span>
-                    </div>
+                    <p class="project-desc">AI-driven pipeline scraping, validating, scoring leads — zero manual data entry.</p>
+                    <div class="project-links"><span class="internal-tag">Internship – internal tool</span></div>
                 </div>
-
-                <!-- Wanderlust -->
                 <div class="project-card">
                     <div class="project-icon">✈️</div>
                     <h3>Wanderlust</h3>
                     <div class="project-tech">Node.js • Express • MongoDB • Cloudinary</div>
-                    <p class="project-desc">Secure travel listing platform with role-based access, rate limiting, maps integration, and image uploads — production-grade security.</p>
+                    <p class="project-desc">Secure travel listing platform with role-based access, rate limiting, maps, and image uploads.</p>
                     <div class="project-links">
                         <a href="https://wanderlust-project-1-8r8z.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
-
-                <!-- PostHive -->
                 <div class="project-card">
                     <div class="project-icon">📝</div>
                     <h3>PostHive</h3>
                     <div class="project-tech">Node.js • Express • EJS • REST API</div>
-                    <p class="project-desc">Server‑rendered blog app with full CRUD, search, and likes. Modular codebase for easy maintenance and future migration.</p>
+                    <p class="project-desc">Server‑rendered blog with full CRUD, search, likes; modular architecture.</p>
                     <div class="project-links">
                         <a href="https://post-hive-g0f9.onrender.com/posts" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
-
-                <!-- Simon Game -->
                 <div class="project-card">
                     <div class="project-icon">🎮</div>
                     <h3>Simon Memory Game</h3>
                     <div class="project-tech">JavaScript • HTML5 • CSS3</div>
-                    <p class="project-desc">Interactive memory challenge with sequence logic, sound effects, and high‑score tracking — clean vanilla JS implementation.</p>
+                    <p class="project-desc">Interactive memory game with sound, sequences, and high‑score tracking.</p>
                     <div class="project-links">
                         <a href="https://simon-say-yfuw.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS & PROBLEM SOLVING -->
+        <section id="achievements">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Achievements & Problem Solving</h2>
+            <div class="card">
+                <ul class="achieve-list">
+                    <li><strong>200+ DSA Problems Solved</strong> on LeetCode & GeeksforGeeks covering Arrays, Strings, Linked Lists, Trees, Graphs, DP, and more — sharpening analytical and optimization skills.</li>
+                    <li><strong>100% Manual Data Entry Eliminated:</strong> Architected AI lead scoring automation that saved countless hours and let sales teams focus on high‑value opportunities.</li>
+                    <li><strong>Leadership:</strong> Led cross-functional development teams, bridging technical execution with business requirements; coordinated with founder and clients to deliver on schedule.</li>
+                    <li><strong>Continuous Innovation:</strong> Proactively introduced n8n and AI/LLM integrations into workflows, transforming manual processes into automated pipelines.</li>
+                </ul>
+            </div>
+            <div class="card" style="margin-top:2rem;">
+                <h3 style="color: #fff; margin-bottom:1rem;">Certification Courses & Professional Development</h3>
+                <ul class="achieve-list">
+                    <li><strong>Understand B2B Business Development & Sales</strong> (Alison) — Scored 80%</li>
+                    <li><strong>MS Excel: Manage and Report with Microsoft Excel</strong> (Alison) — Scored 88%</li>
+                    <li><strong>Expertise:</strong> B2B Sales Funnels, Lead Generation Strategies, Market Sophistication, SMART Goal Setting, Client Communication</li>
+                </ul>
             </div>
         </section>
 
@@ -510,7 +382,6 @@
         </section>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <div class="social-links">
             <a href="https://github.com/shibopriyo5" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
